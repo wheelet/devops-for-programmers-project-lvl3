@@ -1,6 +1,14 @@
 resource "digitalocean_loadbalancer" "loadbalancer" {
-  name = "loadbalancerr"
+  name = "loadbalancer"
   region = "ams3"
+
+  forwarding_rule {
+    entry_port     = 80
+    entry_protocol = "http"
+
+    target_port     = 5000
+    target_protocol = "http"
+  }
 
   forwarding_rule {
     entry_port = 443
@@ -9,7 +17,7 @@ resource "digitalocean_loadbalancer" "loadbalancer" {
     target_port = 5000
     target_protocol = "http"
 
-    certificate_id = digitalocean_certificate.cert.id
+    certificate_id = digitalocean_certificate.cert.name
   }
 
   healthcheck {
