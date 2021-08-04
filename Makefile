@@ -15,4 +15,3 @@ install-requirements:
 
 ansible-deploy:
 	ansible-playbook -i ansible/hosts ansible/playbook.yml --ask-vault-pass
-
