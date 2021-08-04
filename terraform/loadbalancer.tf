@@ -17,7 +17,7 @@ resource "digitalocean_loadbalancer" "loadbalancer" {
     target_port = 5000
     target_protocol = "http"
 
-    certificate_id = digitalocean_certificate.cert.name
+    certificate_name = digitalocean_certificate.cert.name
   }
 
   healthcheck {

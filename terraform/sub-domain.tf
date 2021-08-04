@@ -1,4 +1,4 @@
 resource "digitalocean_domain" "default" {
-  name       = "asd.wheelet.me"
+  name       = "terraform.wheelet.me"
   ip_address = digitalocean_loadbalancer.loadbalancer.ip
 }
