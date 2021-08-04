@@ -18,7 +18,7 @@
       community.docker.docker_container:
         name: devops-example-app
         image: hexletcomponents/devops-example-app
-        published_ports: 5000:5000
+        published_ports: 80:5000
         restart_policy: always
         restart: yes
         container_default_behavior: no_defaults
