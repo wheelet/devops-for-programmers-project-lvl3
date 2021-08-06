@@ -4,16 +4,10 @@
   gather_facts: yes
   remote_user: root
 
+  vars_files:
+    - ./group_vars/all.yml
+
   tasks:
-    - name: Install packages
-      apt:
-        name: python3-pip
-        update_cache: yes
-
-    - name: Install Docker Module for Python
-      pip:
-        name: docker
-
     - name: Run container
       community.docker.docker_container:
         name: devops-example-app

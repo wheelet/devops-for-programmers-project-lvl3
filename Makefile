@@ -7,6 +7,9 @@ plan:
 apply:
 	terraform -chdir=terraform apply
 
+fmt:
+	terraform fmt --check -diff
+
 ansible-ping:
 	ansible all -m ping
 
