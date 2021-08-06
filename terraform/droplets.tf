@@ -1,4 +1,4 @@
-resource "digitalocean_droplet" "droplet-1" {
+resource "digitalocean_droplet" "droplets" {
   count    = 2
   image    = "docker-20-04"
   name     = "web-terraform-project-${count.index + 1}"

@@ -27,7 +27,6 @@ resource "digitalocean_loadbalancer" "loadbalancer" {
   }
 
   droplet_ids = [
-    digitalocean_droplet.droplet-1.id,
-    digitalocean_droplet.droplet-2.id
+    digitalocean_droplet.droplets.*.id,
   ]
 }
