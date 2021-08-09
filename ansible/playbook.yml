@@ -1,18 +1,16 @@
 ---
 
-- hosts: all
+- name: Run our app on server
+  hosts: all
   gather_facts: yes
   remote_user: root
-
-  vars_files:
-    - ./group_vars/all.yml
 
   tasks:
     - name: Run container
       community.docker.docker_container:
         name: devops-example-app
         image: hexletcomponents/devops-example-app
-        published_ports: 80:5000
+        published_ports: '{{ published_port + ":5000" }}'
         restart_policy: always
         restart: yes
         container_default_behavior: no_defaults
